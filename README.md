@@ -36,3 +36,17 @@ bash proteins.sh
 # running experiment on ogbn-products (mini-batch training)
 bash products.sh
 ```
+
+## Reference
+
+If you find our codes useful, please consider citing our work
+
+```
+@misc{luo2024classic,
+      title={Classic GNNs are Strong Baselines: Reassessing GNNs for Node Classification}, 
+      author={Yuankai Luo and Lei Shi and Xiao-Ming Wu},
+      year={2024},
+      eprint={2406.08993},
+      archivePrefix={arXiv}
+}
+```
