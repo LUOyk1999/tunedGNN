@@ -32,9 +32,6 @@ bash arxiv.sh
 # Base code of ogbn-proteins sourced from https://github.com/AiRyunn/BoT (Yangkun Wang, Jiarui Jin, Weinan Zhang, Yong Yu, Zheng Zhang, and David Wipf. Bag of tricks for node classification with graph neural networks. arXiv preprint arXiv:2103.13355, 2021.)
 # Modifications have been applied to adapt to our experiment
 bash proteins.sh
-
-# running experiment on ogbn-products (mini-batch training)
-bash products.sh
 ```
 
 ## Reference
@@ -42,11 +39,10 @@ bash products.sh
 If you find our codes useful, please consider citing our work
 
 ```
-@misc{luo2024classic,
-      title={Classic GNNs are Strong Baselines: Reassessing GNNs for Node Classification}, 
-      author={Yuankai Luo and Lei Shi and Xiao-Ming Wu},
-      year={2024},
-      eprint={2406.08993},
-      archivePrefix={arXiv}
+@article{luo2024classic,
+  title={Classic GNNs are Strong Baselines: Reassessing GNNs for Node Classification},
+  author={Luo, Yuankai and Shi, Lei and Wu, Xiao-Ming},
+  journal={arXiv preprint arXiv:2406.08993},
+  year={2024}
 }
 ```
