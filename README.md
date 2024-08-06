@@ -2,7 +2,7 @@
 
 arxiv: https://arxiv.org/pdf/2406.08993
 
-The repository will be updated in the near future.
+The repository will be updated in the near future. If you need the code, please email me at yuankluo@polyu.edu.hk.
 
 ## Reference
 
