@@ -40,7 +40,7 @@ class GNNConv(torch.nn.Module):
 
 class GNN(torch.nn.Module):
     def __init__(self, in_channels, hidden_channels, out_channels, num_layers,
-                 dropout, ln, gnn, add, res):
+                 dropout, ln, gnn, jk, res):
         super().__init__()
 
         self.dropout = dropout
@@ -48,7 +48,7 @@ class GNN(torch.nn.Module):
         self.lin2 = Linear(hidden_channels, out_channels)
         self.norm = LayerNorm(hidden_channels, elementwise_affine=True)
         self.ln = ln
-        self.add = add
+        self.jk = jk
         self.res = res
         self.convs = torch.nn.ModuleList()
         for _ in range(num_layers):
@@ -69,23 +69,23 @@ class GNN(torch.nn.Module):
             conv.reset_parameters()
 
     def forward(self, x, edge_index):
-        x_local = 0
+        x_final = 0
         x = self.lin1(x)
-        x_local += x
+        x_final += x
         for (conv) in self.convs:
             if self.res:
                 x = conv(x, edge_index) + x
             else:
                 x = conv(x, edge_index)
-            x_local += x
+            x_final += x
         if self.ln:
             x = self.norm(x).relu()
         else:
             x = x.relu()
         x = F.dropout(x, p=self.dropout, training=self.training)
 
-        if self.add:
-            x = x_local
+        if self.jk:
+            x = x_final
         else:
             pass
 
@@ -99,7 +99,7 @@ parser.add_argument('--epochs', type=int, default=1001)
 parser.add_argument('--dropout', type=float, default=0.5)
 parser.add_argument('--gnn', type=str, default='gcn')
 parser.add_argument('--ln', action='store_true')
-parser.add_argument('--add', action='store_true')
+parser.add_argument('--jk', action='store_true')
 parser.add_argument('--res', action='store_true')
 args = parser.parse_args()
 print(args)
@@ -131,7 +131,7 @@ model = GNN(
     dropout=args.dropout,
     ln = args.ln,
     gnn = args.gnn,
-    add = args.add,
+    jk = args.jk,
     res = args.res,
 ).to(device)
 optimizer = torch.optim.Adam(model.parameters(), lr=0.003)

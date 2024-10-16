@@ -83,7 +83,7 @@ def gen_model(args):
         edge_drop=args.edge_drop,
         use_attn_dst=not args.no_attn_dst,
         mpnn=args.mpnn,
-        add=args.add
+        jk=args.jk
     )
 
     return model
@@ -284,7 +284,7 @@ def main():
     argparser.add_argument("--log-every", type=int, default=5, help="log every LOG_EVERY epochs")
     argparser.add_argument("--plot", action="store_true", help="plot learning curves")
     argparser.add_argument("--save-pred", action="store_true", help="save final predictions")
-    argparser.add_argument("--add", action="store_true")
+    argparser.add_argument("--jk", action="store_true")
     args = argparser.parse_args()
 
     if args.cpu:

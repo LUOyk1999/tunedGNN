@@ -70,13 +70,19 @@ import os
 def save_model(args, model, optimizer, run):
     if not os.path.exists(f'models/{args.dataset}'):
         os.makedirs(f'models/{args.dataset}')
-    model_path = f'models/{args.dataset}/{args.method}_{run}_{args.beta}.pt'
+    if(args.model=='MPNN'):
+        model_path = f'models/{args.dataset}/{args.model}_{run}.pt'
+    else:
+        model_path = f'models/{args.dataset}/{args.model}_{run}.pt'
     torch.save({'model_state_dict': model.state_dict(),
                 'optimizer_state_dict': optimizer.state_dict()
                 }, model_path)
 
 def load_model(args, model, optimizer, run):
-    model_path = f'models/{args.dataset}/{args.method}_{run}_{args.beta}.pt'
+    if(args.model=='MPNN'):
+        model_path = f'models/{args.dataset}/{args.model}_{run}.pt'
+    else:
+        model_path = f'models/{args.dataset}/{args.model}_{run}.pt'
     checkpoint = torch.load(model_path)
     model.load_state_dict(checkpoint['model_state_dict'])
     optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
@@ -86,10 +92,19 @@ def load_model(args, model, optimizer, run):
 def save_result(args, results):
     if not os.path.exists(f'results/{args.dataset}'):
         os.makedirs(f'results/{args.dataset}')
-    filename = f'results/{args.dataset}/{args.method}.csv'
+    if(args.model=='MPNN'):
+        filename = f'results/{args.dataset}/{args.model}.csv'
+    else:
+        filename = f'results/{args.dataset}/{args.model}.csv'
     print(f"Saving results to {filename}")
     with open(f"{filename}", 'a+') as write_obj:
-        write_obj.write(
-            f"{args.method} " + f"{args.dropout} " + f"{args.lr} " + \
-            f"{results.mean():.2f} $\pm$ {results.std():.2f} \n")
+        if(args.model=='MPNN'):
+            write_obj.write(
+                f"{args.model} " + f"{args.lr} " + f"{args.hidden_channels} " + f"{args.local_layers} " + f"{args.dropout} " + f"{args.ln} " + \
+                f"{args.bn} " + f"{args.res} " + \
+                f"{results.mean():.2f} $\pm$ {results.std():.2f} \n")
+        else:
+            write_obj.write(
+                f"{args.model} " + f"{args.lr} " + \
+                f"{results.mean():.2f} $\pm$ {results.std():.2f} \n")
 

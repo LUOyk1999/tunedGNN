@@ -82,7 +82,7 @@ for run in range(args.runs):
     if args.save_model:
         save_model(args, model, optimizer, run)
 
-    for epoch in range(args.local_epochs):
+    for epoch in range(args.epochs):
 
         model.train()
         optimizer.zero_grad()

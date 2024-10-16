@@ -186,7 +186,7 @@ class GNN(nn.Module):
         use_attn_dst=True,
         allow_zero_in_degree=False,
         mpnn='gat',
-        add=False
+        jk=False
     ):
         super().__init__()
         self.n_layers = n_layers
@@ -196,7 +196,7 @@ class GNN(nn.Module):
         self.mpnn = mpnn
         self.convs = nn.ModuleList()
         self.norms = nn.ModuleList()
-        self.add = add
+        self.jk = jk
         self.node_encoder = nn.Linear(node_feats, n_hidden)
         if edge_emb > 0:
             self.edge_encoder = nn.ModuleList()
@@ -283,7 +283,7 @@ class GNN(nn.Module):
             h_local.append(h)
 
             
-        if self.add:
+        if self.jk:
             for i in range(len(h_local)):
                 h_local[i] = h_local[i][: h.shape[0], :]
             stacked_tensor = torch.stack(h_local)
