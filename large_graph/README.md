@@ -1,12 +1,10 @@
 ## Running classic GNNs on large graphs
 
 ```bash
-cd large_graph
-
 # running experiment on ogbn-arxiv (full batch training)
 bash arxiv.sh
 
-# running experiment on pokec
+# running experiment on pokec (mini-batch training)
 bash pokec.sh
 
 # running experiment on ogbn-proteins (mini-batch training) 

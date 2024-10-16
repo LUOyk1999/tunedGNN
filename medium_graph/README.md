@@ -7,9 +7,8 @@ Download the geom-gcn folder, place it in `./data/` and unzip it. And we use the
 Download `chameleon_filtered.npz`, put it into `./data/geom-gcn/chameleon/`.
 Download `squirrel_filtered.npz`, put it into `./data/geom-gcn/squirrel/`.
 
-## Run the codes
+## Run classic GNNs on medium graphs
 
-MPNNs:
 ```bash
 sh run_gnn.sh 0
 ```
