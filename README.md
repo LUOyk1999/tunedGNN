@@ -2,6 +2,10 @@
 
 arxiv: https://arxiv.org/pdf/2406.08993
 
+poster:
+
+![gnn_poster-min.png](https://raw.githubusercontent.com/LUOyk1999/images/refs/heads/main/images/gnn_poster-min.png)
+
 ## Python environment setup with Conda
 
 Tested with Python 3.7, PyTorch 1.12.1, and PyTorch Geometric 2.3.1, dgl 1.0.2.
@@ -38,7 +42,3 @@ If you find our codes useful, please consider citing our work
   year={2024}
 }
 ```
-
-# Poster
-
-![gnn_poster-min.png](https://raw.githubusercontent.com/LUOyk1999/images/refs/heads/main/images/gnn_poster-min.png)
