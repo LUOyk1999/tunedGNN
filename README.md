@@ -38,3 +38,7 @@ If you find our codes useful, please consider citing our work
   year={2024}
 }
 ```
+
+# Poster
+
+![gnn_poster-min.png](https://raw.githubusercontent.com/LUOyk1999/images/refs/heads/main/images/gnn_poster-min.png)
