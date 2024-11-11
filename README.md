@@ -39,6 +39,6 @@ If you find our codes useful, please consider citing our work
 }
 ```
 
-# Poster
+## Poster
 
 ![gnn_poster-min.png](https://raw.githubusercontent.com/LUOyk1999/images/refs/heads/main/images/gnn_poster-min.png)
