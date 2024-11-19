@@ -21,27 +21,3 @@ python main.py --dataset wikics --hidden_channels 512 --epochs 1000 --lr 0.001 -
 
 done 
 done 
-
-sh run_gat_tuning_cora.sh 1 2 > run_gat_tuning_cora_2_1014.txt 2>&1 &
-sh run_gat_tuning_cora.sh 2 3 > run_gat_tuning_cora_3_1014.txt 2>&1 &
-sh run_gcn_tuning_cora.sh 3 3 > run_gcn_tuning_cora_3_1014.txt 2>&1 &
-sh run_sage_tuning_cora.sh 4 3 > run_sage_tuning_cora_3_1014.txt 2>&1 &
-
-# sh run_gcn_tuning_cora.sh 5 2 > run_gcn_tuning_cora_2_1013.txt 2>&1 &
-# sh run_sage_tuning_cora.sh 6 2 > run_sage_tuning_cora_2_1013.txt 2>&1 &
-
-sh run_gat_tuning_cora.sh 1 4 > run_gat_tuning_cora_4_1014.txt 2>&1 &
-sh run_gat_tuning_cora.sh 2 5 > run_gat_tuning_cora_5_1014.txt 2>&1 &
-sh run_gcn_tuning_cora.sh 3 4 > run_gcn_tuning_cora_4_1014.txt 2>&1 &
-sh run_gcn_tuning_cora.sh 4 5 > run_gcn_tuning_cora_5_1014.txt 2>&1 &
-sh run_sage_tuning_cora.sh 5 4 > run_sage_tuning_cora_4_1014.txt 2>&1 &
-sh run_sage_tuning_cora.sh 6 5 > run_sage_tuning_cora_5_1014.txt 2>&1 &
-
-sh run_gat_tuning_cora.sh 6 6 > run_gat_tuning_cora_6_1014.txt 2>&1 &
-sh run_gcn_tuning_cora.sh 7 6 > run_gcn_tuning_cora_6_1014.txt 2>&1 &
-sh run_sage_tuning_cora.sh 7 6 > run_sage_tuning_cora_6_1014.txt 2>&1 &
-
-sh run_gat_tuning_cora.sh 5 1 > run_gat_tuning_cora_1_1014.txt 2>&1 &
-
-# sh run_gcn_tuning_cora.sh 2 1 > run_gcn_tuning_cora_1_1013.txt 2>&1 &
-# sh run_sage_tuning_cora.sh 3 1 > run_sage_tuning_cora_1_1013.txt 2>&1 &
