@@ -45,4 +45,4 @@ url={https://openreview.net/forum?id=xkljKdGe4E}
 
 ## Poster
 
-![gnn_poster-min.png](https://raw.githubusercontent.com/LUOyk1999/images/refs/heads/main/images/gnn_poster-min.png)
+![gnn-min.png](https://raw.githubusercontent.com/LUOyk1999/images/refs/heads/main/images/gnn-min.png)
