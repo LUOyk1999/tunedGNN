@@ -3,7 +3,7 @@
 | Benchmarking Series: Reassessing Classic GNNs | Paper |
 | - | - |
 | **_[Classic GNNs are Strong Baselines: Reassessing GNNs for Node Classification](https://github.com/LUOyk1999/tunedGNN) (NeurIPS 2024)_** | [Link](https://openreview.net/forum?id=xkljKdGe4E) |
-| [Can Classic GNNs Be Strong Baselines for Graph-level Tasks? Simple Architectures Meet Excellence](https://github.com/LUOyk1999/GNNPlus) (ICML 2025) | [Link](https://arxiv.org/abs/2502.09263) | 
+| [Can Classic GNNs Be Strong Baselines for Graph-level Tasks?](https://github.com/LUOyk1999/GNNPlus) (ICML 2025) | [Link](https://arxiv.org/abs/2502.09263) | 
 
 # Classic GNNs are Strong Baselines: Reassessing GNNs for Node Classification (NeurIPS 2024)
 
